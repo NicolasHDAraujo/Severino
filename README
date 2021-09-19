@@ -1,0 +1,20 @@
+#######    API BACKEND TCC IFSP   ######
+
+#Para execultar
+
+#instalar as dependencias do package.json
+
+#gerar e configurar o arquivo .env com as seguintes informações
+
+DATABASE=severinoapp //nome do banco
+DATABASE_HOST=127.0.0.1 //endereço de execução do banco (mysql workbench)
+DATABASE_PORT=3306 //porta do banco
+DATABASE_USERNAME=root //usuário do servidor do banco
+DATABASE_PASSWORD=SUA SENHA AQUI //senha do servidor do banco
+
+TOKEN_SECRET = ASASN2U3N1215243ewewe22e1w2EA0asaWS1515AAS6113200Wds165d12630aw
+TOKEN_EXPIRATION=5d
+
+Execultar o servidor
+
+Na pasta Utils está o arquivo JSON do Insominia para testes das rotas
