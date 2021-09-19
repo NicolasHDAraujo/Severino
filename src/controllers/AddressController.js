@@ -17,7 +17,6 @@ class AddressController {
     // retornar um endereco consultando pela api para o frontend mapear e preencher os campos
     try {
       const { cep } = req.body;
-      console.log(cep);
       if (!cep) {
         return res.status(400).json({
           errors: ['Cep não enviado'],
@@ -28,8 +27,7 @@ class AddressController {
 
       return res.json(retorno);
     } catch (e) {
-      console.log(e);
-      return res.json(null);
+      return res.status(400).json({ errors: e.errors.map((err) => err.message) });
     }
   }
 
