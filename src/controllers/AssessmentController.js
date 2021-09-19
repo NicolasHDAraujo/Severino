@@ -3,12 +3,14 @@ import Assessment from '../models/Assessment';
 class AssessmentController {
   async create(req, res) { // criar novo
     try {
-      const novaAvaliacao = await Assessment.create(req.body);
+      const user_id = req.userId;
+      const dados = req.body;
+      const novaAvaliacao = await Assessment.create({ ...dados, user_id });
       const {
         nota, conteudo, service_id,
       } = novaAvaliacao;
       return res.json({
-        nota, conteudo, service_id,
+        nota, conteudo, service_id, user_id,
       });
     } catch (e) {
       return res.status(400).json({ errors: e.errors.map((err) => err.message) });

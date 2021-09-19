@@ -19,5 +19,6 @@ export default class Assessment extends Model {
 
   static associate(models) {
     this.belongsTo(models.Service, { foreignKey: 'service_id' });
+    this.hasOne(models.Assessment, { foreignKey: 'user_id' });
   }
 }
