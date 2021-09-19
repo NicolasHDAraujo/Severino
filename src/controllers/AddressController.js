@@ -1,5 +1,7 @@
 import Address from '../models/Address';
 
+const { consultarCep } = require('correios-brasil');
+
 class AddressController {
   async create(req, res) { // criar novo
     try {
@@ -8,6 +10,26 @@ class AddressController {
       return res.json(created);
     } catch (e) {
       return res.status(400).json({ errors: e.errors.map((err) => err.message) });
+    }
+  }
+
+  async show(req, res) {
+    // retornar um endereco consultando pela api para o frontend mapear e preencher os campos
+    try {
+      const { cep } = req.body;
+      console.log(cep);
+      if (!cep) {
+        return res.status(400).json({
+          errors: ['Cep não enviado'],
+        });
+      }
+
+      const retorno = await consultarCep(cep).then((resposta) => res.json(resposta));
+
+      return res.json(retorno);
+    } catch (e) {
+      console.log(e);
+      return res.json(null);
     }
   }
 
