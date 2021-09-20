@@ -5,8 +5,10 @@ const { consultarCep } = require('correios-brasil');
 class AddressController {
   async create(req, res) { // criar novo
     try {
-      const created = await Address.create(req.body);
-
+      const user_id = req.userId;
+      const dados = req.body;
+      const created = await Address.create({ ...dados, user_id });
+      console.log(created);
       return res.json(created);
     } catch (e) {
       return res.status(400).json({ errors: e.errors.map((err) => err.message) });

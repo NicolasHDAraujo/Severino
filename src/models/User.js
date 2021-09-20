@@ -78,8 +78,8 @@ export default class User extends Model {
   }
 
   static associate(models) {
-    this.hasMany(models.Image, { foreignKey: 'user_id' });
+    this.hasOne(models.Image, { foreignKey: 'user_id' });
     this.hasMany(models.Service, { foreignKey: 'user_id' });
-    this.hasOne(models.Address, { foreignKey: 'user_id' });
+    this.hasMany(models.Address, { foreignKey: 'user_id' });
   }
 }
