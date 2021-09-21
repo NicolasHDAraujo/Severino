@@ -49,5 +49,6 @@ export default class Service extends Model {
     this.belongsTo(models.User, { foreignKey: 'user_id' });// este model pertence ao user
     this.hasMany(models.Schedule, { foreignKey: 'service_id' });
     this.hasMany(models.Assessment, { foreignKey: 'service_id' });
+    this.hasMany(models.Image, { foreignKey: 'service_id' });
   }
 }

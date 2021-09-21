@@ -2,6 +2,7 @@ import Service from '../models/Service';
 import User from '../models/User';
 import Assessment from '../models/Assessment';
 import Schedule from '../models/Schedule';
+import Image from '../models/Image';
 
 class ServiceController {
   async create(req, res) { // criar novo
@@ -21,10 +22,12 @@ class ServiceController {
         ['id', 'DESC'],
         [User, 'id', 'DESC'],
         [Schedule, 'id', 'DESC'],
+        [Image, 'id', 'DESC'],
       ],
       include: [
         { model: User },
         { model: Schedule },
+        { model: Image },
       ],
     });
 

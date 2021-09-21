@@ -38,5 +38,6 @@ export default class Image extends Model {
 
   static associate(models) { // associando foto ao usuario
     this.belongsTo(models.User, { foreignKey: 'user_id' });// este model pertence ao user
+    this.belongsTo(models.User, { foreignKey: 'service_id' });// este model pertence ao user
   }
 }
