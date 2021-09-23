@@ -1,7 +1,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.addColumn(
     'services',
-    'titulo',
+    'tag',
     {
       type: Sequelize.STRING,
       allowNull: false,

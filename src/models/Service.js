@@ -30,7 +30,7 @@ export default class Service extends Model {
           },
         },
       },
-      title: {
+      titulo: {
         type: Sequelize.STRING,
         defaultValue: '',
         validate: {
@@ -39,6 +39,17 @@ export default class Service extends Model {
           },
         },
       },
+      tag: {
+        type: Sequelize.STRING,
+        defaultValue: '',
+        validate: {
+          len: {
+            args: [2, 500],
+            msg: 'Limite minimo de 2 e maximo de 500 caracteres',
+          },
+        },
+      },
+
     }, {
       sequelize,
     });
