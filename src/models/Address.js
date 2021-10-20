@@ -74,5 +74,6 @@ export default class Address extends Model {
 
   static associate(models) {
     this.belongsTo(models.User, { foreignKey: 'user_id' });
+    this.belongsTo(models.Service, { foreignKey: 'service_id' });
   }
 }

@@ -3,6 +3,7 @@ import User from '../models/User';
 import Assessment from '../models/Assessment';
 import Schedule from '../models/Schedule';
 import Image from '../models/Image';
+import Address from '../models/Address';
 
 class ServiceController {
   async create(req, res) { // criar novo
@@ -23,11 +24,13 @@ class ServiceController {
         [User, 'id', 'DESC'],
         [Schedule, 'id', 'DESC'],
         [Image, 'id', 'DESC'],
+        [Address, 'id', 'DESC'],
       ],
       include: [
         { model: User },
         { model: Schedule },
         { model: Image },
+        { model: Address },
       ],
     });
 
@@ -50,11 +53,13 @@ class ServiceController {
           [User, 'id', 'DESC'],
           [Schedule, 'id', 'DESC'],
           [Assessment, 'id', 'DESC'],
+          [Address, 'id', 'DESC'],
         ],
         include: [
           { model: User },
           { model: Schedule },
           { model: Assessment },
+          { model: Address },
         ],
       });
 
@@ -80,10 +85,12 @@ class ServiceController {
           ['id', 'DESC'],
           [User, 'id', 'DESC'],
           [Schedule, 'id', 'DESC'],
+          [Address, 'id', 'DESC'],
         ],
         include: [
           { model: User },
           { model: Schedule },
+          { model: Address },
         ],
       });
 

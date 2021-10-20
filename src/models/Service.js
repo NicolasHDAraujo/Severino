@@ -61,5 +61,6 @@ export default class Service extends Model {
     this.hasMany(models.Schedule, { foreignKey: 'service_id' });
     this.hasMany(models.Assessment, { foreignKey: 'service_id' });
     this.hasMany(models.Image, { foreignKey: 'service_id' });
+    this.hasOne(models.Address, { foreignKey: 'service_id' });
   }
 }
