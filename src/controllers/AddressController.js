@@ -39,6 +39,7 @@ class AddressController {
   async update(req, res) { // atualizar endereco
     try {
       const address = await Address.findByPk(req.params.id);
+      const user_id = req.userId;
 
       if (!address) {
         return res.status(400).json({
@@ -46,7 +47,12 @@ class AddressController {
         });
       }
 
-      const user_id = req.userId;
+      if (user_id !== address.user_id) {
+        return res.status(400).json({
+          errors: ['Endereço não pertence ao usuário!'],
+        });
+      }
+
       const dados = req.body;
 
       const novoDado = await address.update({ ...dados, user_id });
@@ -72,7 +78,7 @@ class AddressController {
 
       if (id_user !== user_id) {
         return res.status(400).json({
-          errors: ['Endereço não pertence ao usuário logado!'],
+          errors: ['Endereço não pertence ao usuário!'],
         });
       }
 
