@@ -11,7 +11,7 @@ export default class Image extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo não pode ser vazio',
+            msg: 'Nome original não pode ser vazio',
           },
         },
       },
@@ -20,7 +20,7 @@ export default class Image extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo não pode ser vazio',
+            msg: 'Imagem não pode ser vazio',
           },
         },
       },

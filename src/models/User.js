@@ -21,7 +21,7 @@ export default class User extends Model {
         validate: {
           len: {
             args: [11],
-            msg: 'Campo whatsapp somente 12 numeros',
+            msg: 'Campo whatsapp somente 11 numeros',
           },
         },
       },
@@ -53,12 +53,7 @@ export default class User extends Model {
       },
       is_proff: {
         type: Sequelize.BOOLEAN,
-        defaultValue: '',
-        validate: {
-          notEmpty: {
-            msg: 'Necessário informar se é profissional',
-          },
-        },
+        defaultValue: false,
       },
     }, {
       sequelize,

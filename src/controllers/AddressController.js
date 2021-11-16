@@ -21,13 +21,16 @@ class AddressController {
       const { cep } = req.body;
       if (!cep) {
         return res.status(400).json({
-          errors: ['Cep não enviado'],
+          errors: ['CEP não enviado'],
         });
       }
 
-      const retorno = await consultarCep(cep).then((resposta) => res.json(resposta));
-
-      return res.json(retorno);
+      try {
+        const retorno = await consultarCep(cep).then((resposta) => res.json(resposta));
+        return res.json(retorno);
+      } catch (e) {
+        return res.status(400).json({ errors: ['CEP inválido'] });
+      }
     } catch (e) {
       return res.status(400).json({ errors: e.errors.map((err) => err.message) });
     }
@@ -43,7 +46,10 @@ class AddressController {
         });
       }
 
-      const novoDado = await address.update(req.body);
+      const user_id = req.userId;
+      const dados = req.body;
+
+      const novoDado = await address.update({ ...dados, user_id });
 
       return res.json(novoDado);
     } catch (e) {
@@ -58,6 +64,15 @@ class AddressController {
       if (!address) {
         return res.status(400).json({
           errors: ['Endereço não existe!'],
+        });
+      }
+
+      const { user_id } = address;
+      const id_user = req.userId;
+
+      if (id_user !== user_id) {
+        return res.status(400).json({
+          errors: ['Endereço não pertence ao usuário logado!'],
         });
       }
 

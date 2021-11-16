@@ -8,7 +8,7 @@ export default class Address extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo não pode ser vazio',
+            msg: 'Rua não pode ser vazio',
           },
         },
       },
@@ -17,7 +17,7 @@ export default class Address extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo não pode ser vazio',
+            msg: 'Numero não pode ser vazio',
           },
         },
       },
@@ -26,7 +26,7 @@ export default class Address extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo não pode ser vazio',
+            msg: 'Bairro não pode ser vazio',
           },
         },
       },
@@ -35,7 +35,7 @@ export default class Address extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo não pode ser vazio',
+            msg: 'Localidade não pode ser vazio',
           },
         },
       },
@@ -54,7 +54,7 @@ export default class Address extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo não pode ser vazio',
+            msg: 'CEP não pode ser vazio',
           },
         },
       },

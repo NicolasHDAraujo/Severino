@@ -8,7 +8,7 @@ export default class Schedule extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo não pode ser vazio',
+            msg: 'Dia não pode ser vazio',
           },
         },
       },
@@ -17,7 +17,7 @@ export default class Schedule extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo não pode ser vazio',
+            msg: 'Hora inicio não pode ser vazio',
           },
         },
       },
@@ -26,7 +26,7 @@ export default class Schedule extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo não pode ser vazio',
+            msg: 'Hora final não pode ser vazio',
           },
         },
       },

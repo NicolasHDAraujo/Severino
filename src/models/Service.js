@@ -8,7 +8,7 @@ export default class Service extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo não pode ser vazio',
+            msg: 'Categoria não pode ser vazio',
           },
         },
       },
@@ -17,7 +17,7 @@ export default class Service extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo não pode ser vazio',
+            msg: 'Tipo não pode ser vazio',
           },
         },
       },
@@ -26,7 +26,7 @@ export default class Service extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo não pode ser vazio',
+            msg: 'Descrição não pode ser vazio',
           },
         },
       },
@@ -35,7 +35,7 @@ export default class Service extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo não pode ser vazio',
+            msg: 'Titulo não pode ser vazio',
           },
         },
       },
